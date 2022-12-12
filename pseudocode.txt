@@ -1,0 +1,58 @@
+mport java.util.Scanner;
+
+public class automobile {
+    public static void main(String[] args) {
+        Scanner s = new Scanner(System.in);
+        car mihit = new car("mihit");
+        Student surya = new Student("surya",19,"ashu@gmail.com");
+        sample gagan = new sample("gagan","SCOPE");
+
+        System.out.println(mihit.toString()+"\n");
+        System.out.println(surya.toString()+"\n");
+        System.out.println(gagan.toString());
+    }
+}
+
+
+class car{
+    String name;
+    car(String n){
+        name=n;
+    }
+
+    @Override
+    public String toString() {
+        String s = "car Details:\nName: "+name;
+        return s;
+    }
+}
+
+class Student extends car{
+    int age;
+    String email;
+    Student(String n,int a,String e){
+        super(n);
+        age=a;
+        email=e;
+    }
+
+    @Override
+    public String toString() {
+        String s = "Student Details:\nName: "+name+", Age: "+age+", Email: "+email;
+        return s;
+    }
+}
+
+class sample extends car{
+    String brand;
+    sample(String n,String dep){
+        super(n);
+        brand=dep;
+    }
+
+    @Override
+    public String toString() {
+        String s = "sample Details:\nName: "+name+", brand: "+brand;
+        return s;
+    }
+}
